@@ -19,9 +19,25 @@ const __dirname = dirname(__filename);
 const app = express();
 const httpServer = createServer(app);
 app.use(cookieParser());
+
+// Allow CORS from Vercel and configured frontend URL (both http and https)
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  process.env.FRONTEND_URL?.replace('http://', 'https://'),
+  /.*\.vercel\.app$/
+].filter(Boolean);
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL,
-  credentials: true
+  origin: (origin, callback) => {
+    if (!origin) return callback(null, true);
+    const isAllowed = allowedOrigins.some((allowed) =>
+      allowed instanceof RegExp ? allowed.test(origin) : allowed === origin
+    );
+    return isAllowed ? callback(null, true) : callback(new Error('Not allowed by CORS'));
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -31,8 +47,14 @@ const URL = process.env.URL;
 
 const io = new Server(httpServer, {
   cors: {
-    origin: process.env.FRONTEND_URL,
-    methods: ["GET", "POST"],
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
+      const isAllowed = allowedOrigins.some((allowed) =>
+        allowed instanceof RegExp ? allowed.test(origin) : allowed === origin
+      );
+      return isAllowed ? callback(null, true) : callback(new Error('Not allowed by CORS'));
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true
   }
 });

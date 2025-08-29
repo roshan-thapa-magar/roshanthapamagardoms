@@ -7,11 +7,11 @@ import Sidebar from "../components/Admin/main/Sidebar";
 import Header from "../components/Admin/main/Header";
 
 /* Pages */
-import Dashboard from "../components/admin/pages/Dashboard";
-import Table from "../components/admin/pages/Tables";
+import Dashboard from "../components/Admin/pages/Dashboard";
+import Table from "../components/Admin/pages/Tables";
 import Cashier from "../components/Admin/pages/Cashier";
-import Kitchen from "../components/admin/pages/Kitchen";
-import Setting from "../components/admin/pages/Setting";
+import Kitchen from "../components/Admin/pages/Kitchen";
+import Setting from "../components/Admin/pages/Setting";
 import Profile from "../components/Admin/pages/Profile";
 import Inactive from "./inactive";
 
