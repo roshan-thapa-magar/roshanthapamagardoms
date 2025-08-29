@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import img from '../../../assets/defaultImg.png';
 import Sidebar from './Setting/Sidebar';
-import Profile from './Setting/pages/Profile';
+import Profile from './Setting/pages/profile';
 import Account from './Setting/pages/Account';
 import Notification from './Setting/pages/Notification';
 
