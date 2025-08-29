@@ -7,7 +7,7 @@ import Sidebar from "../components/Admin/main/Sidebar";
 import Header from "../components/Admin/main/Header";
 
 /* Pages */
-import Dashboard from "../components/admin/pages/dasbhoard";
+import Dashboard from "../components/admin/pages/Dashboard";
 import Table from "../components/admin/pages/Tables";
 import Cashier from "../components/Admin/pages/Cashier";
 import Kitchen from "../components/admin/pages/Kitchen";
