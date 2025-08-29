@@ -3,34 +3,34 @@ import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { LoginContext } from "../components/ContextProvider/Context";
 
 /* Components */
-import Sidebar from "../components/Admin/main/Sidebar";
-import Header from "../components/Admin/main/Header";
+import Sidebar from "../components/admin/main/Sidebar";
+import Header from "../components/admin/main/Header";
 
 /* Pages */
-import Dashboard from "../components/Admin/pages/Dashboard";
-import Table from "../components/Admin/pages/Tables";
-import Cashier from "../components/Admin/pages/Cashier";
-import Kitchen from "../components/Admin/pages/Kitchen";
-import Setting from "../components/Admin/pages/Setting";
-import Profile from "../components/Admin/pages/Profile";
+import Dashboard from "../components/admin/pages/Dashboard";
+import Table from "../components/admin/pages/Tables";
+import Cashier from "../components/admin/pages/Cashier";
+import Kitchen from "../components/admin/pages/Kitchen";
+import Setting from "../components/admin/pages/Setting";
+import Profile from "../components/admin/pages/Profile";
 import Inactive from "./inactive";
 
 /* Menu */
-import MenuCategory from "../components/Admin/pages/menu/MenuCategory";
-import MenuProduct from "../components/Admin/pages/menu/MenuProduct";
-import Units from "../components/Admin/pages/menu/units";
+import MenuCategory from "../components/admin/pages/menu/MenuCategory";
+import MenuProduct from "../components/admin/pages/menu/MenuProduct";
+import Units from "../components/admin/pages/menu/units";
 
 /* Staff */
-// import StaffCategory from '../components/Admin/pages/staff/staffCategory';
-import StaffDetails from "../components/Admin/pages/staff/StaffDetails";
+// import StaffCategory from '../components/admin/pages/staff/staffCategory';
+import StaffDetails from "../components/admin/pages/staff/StaffDetails";
 
 /* Report */
-import Sales from "../components/Admin/pages/report/Sales";
-import Purchase from "../components/Admin/pages/report/Purchase";
+import Sales from "../components/admin/pages/report/Sales";
+import Purchase from "../components/admin/pages/report/Purchase";
 
 /* Table Menu */
-import TableMenu from "../components/Admin/pages/TableMenu";
-import Main from "../components/Admin/pages/TableMenu/Main";
+import TableMenu from "../components/admin/pages/TableMenu";
+import Main from "../components/admin/pages/TableMenu/Main";
 const API_URL = import.meta.env.VITE_API_URL;
 import { useTranslation } from "react-i18next";
 
